@@ -87,5 +87,10 @@ namespace OOPIssueTracker
                 System.Diagnostics.Process.Start(url);
             }
         }
+
+        private void idnumber_TextChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

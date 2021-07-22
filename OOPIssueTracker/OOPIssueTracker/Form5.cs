@@ -67,5 +67,14 @@ namespace OOPIssueTracker
             Register f7 = new Register();
             f7.ShowDialog();
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            MessageBox.Show("You are currently logged in as 'Developer'.");
+            kirosTracker success = new kirosTracker();
+            success.ShowDialog();
+            this.Close();
+        }
     }
 }

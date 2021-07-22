@@ -45,5 +45,11 @@ namespace OOPIssueTracker
             f6.ShowDialog();
             this.Close();
         }
+
+        private void submitModNote_Click(object sender, EventArgs e)
+        {
+            modnotesub submitnew = new modnotesub();
+            submitnew.ShowDialog();
+        }
     }
 }

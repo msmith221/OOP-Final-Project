@@ -64,6 +64,16 @@ namespace OOPIssueTracker
                 severitySelection = "Urgent";
             }
 
+            var chars = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
+            var stringChars = new char[8];
+            var random = new Random();
+
+            for (int i = 0; i < stringChars.Length; i++)
+            {
+                stringChars[i] = chars[random.Next(chars.Length)];
+            }
+
+            var finalString = new String(stringChars);
 
             string issueTypeSelected = issueType.SelectedItem.ToString();
             string severityLevel = severitySelection;
@@ -72,10 +82,11 @@ namespace OOPIssueTracker
             string gameVersionSelect = gameVersion.Text;
             string reportThreadURL = reportLink.Text;
             string detailsSubmission = detailText.Text;
+            string issueIDNumber = finalString;
 
             //enter the new data
             Database db = new Database();
-            MySqlCommand command = new MySqlCommand("INSERT INTO `issues`(`type`, `severity`, `name`, `date`, `version`, `reportURL`, `details`) VALUES (@type, @sev, @name, @date, @version, @report, @details)", db.getConnection());
+            MySqlCommand command = new MySqlCommand("INSERT INTO `issues`(`type`, `severity`, `name`, `date`, `version`, `reportURL`, `details`,`issueID`) VALUES (@type, @sev, @name, @date, @version, @report, @details, @ID)", db.getConnection());
 
             command.Parameters.Add("@type", MySqlDbType.VarChar).Value = issueTypeSelected;
             command.Parameters.Add("@sev", MySqlDbType.VarChar).Value = severityLevel;
@@ -84,6 +95,7 @@ namespace OOPIssueTracker
             command.Parameters.Add("@version", MySqlDbType.VarChar).Value = gameVersionSelect;
             command.Parameters.Add("@report", MySqlDbType.VarChar).Value = reportThreadURL;
             command.Parameters.Add("@details", MySqlDbType.VarChar).Value = detailsSubmission;
+            command.Parameters.Add("@ID", MySqlDbType.VarChar).Value = issueIDNumber;
 
             //open the connection
             db.openConnection();
@@ -166,5 +178,45 @@ namespace OOPIssueTracker
             }
         }
 
+        private void issueDate_ValueChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void issueType_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void clearBtn_Click(object sender, EventArgs e)
+        {
+
+            issueType.SelectedIndex.ToString("");
+
+            if (sevMedium.Checked == true)
+            {
+                sevMedium.Checked = false;
+            }
+            if (sevHigh.Checked == true)
+            {
+                sevHigh.Checked = false;
+            }
+            if (sevLow.Checked == true)
+            {
+                sevLow.Checked = false;
+            }
+            if (sevUrgent.Checked == true)
+            {
+                sevUrgent.Checked = false;
+            }
+
+            issueName.Text = "";
+            gameVersion.Text = "";
+            issueDate.Text = "";
+            reportLink.Text = "";
+            detailText.Text = "";
+
+
+        }
     }
 }

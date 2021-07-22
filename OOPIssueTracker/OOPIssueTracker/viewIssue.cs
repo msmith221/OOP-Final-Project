@@ -98,7 +98,7 @@ namespace OOPIssueTracker
         private void loadButton_Click(object sender, EventArgs e)
         {
             db.openConnection();
-            MySqlCommand cmd = new MySqlCommand("SELECT `name`, `reportURL`, `severity`, `type`, `date`, `details`, `version` FROM `issues` WHERE `name` = @name", db.getConnection());
+            MySqlCommand cmd = new MySqlCommand("SELECT `name`, `reportURL`, `severity`, `type`, `date`, `details`, `version`, `issueID` FROM `issues` WHERE `name` = @name", db.getConnection());
             cmd.Parameters.AddWithValue("@name", b);
             MySqlDataReader reader = cmd.ExecuteReader();
             while (reader.Read())
@@ -110,9 +110,20 @@ namespace OOPIssueTracker
                 submissionDate.Text = reader.GetValue(4).ToString();
                 detailsBox.Text = reader.GetValue(5).ToString();
                 gameVersion.Text = reader.GetValue(6).ToString();
+                resolvedIDNumber.Text = reader.GetValue(7).ToString();
             }
             db.closeConnection();
             issueStatus.Text = "Open";
+        }
+
+        private void label8_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void textBox1_TextChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

@@ -52,6 +52,7 @@
             this.issueDate = new System.Windows.Forms.DateTimePicker();
             this.label9 = new System.Windows.Forms.Label();
             this.viewResolved = new System.Windows.Forms.Button();
+            this.clearBtn = new System.Windows.Forms.Button();
             this.severitySelect.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -74,6 +75,7 @@
             "Game / Missing Texture",
             "Game / Map Crash",
             "Game / Collision Issue",
+            "Game / Code Error",
             "Forum / Code Error",
             "Forum / Page Issue",
             "Forum / Broken Links"});
@@ -81,6 +83,7 @@
             this.issueType.Name = "issueType";
             this.issueType.Size = new System.Drawing.Size(146, 108);
             this.issueType.TabIndex = 1;
+            this.issueType.SelectedIndexChanged += new System.EventHandler(this.issueType_SelectedIndexChanged);
             // 
             // label2
             // 
@@ -275,6 +278,7 @@
             this.issueDate.Name = "issueDate";
             this.issueDate.Size = new System.Drawing.Size(227, 20);
             this.issueDate.TabIndex = 18;
+            this.issueDate.ValueChanged += new System.EventHandler(this.issueDate_ValueChanged);
             // 
             // label9
             // 
@@ -296,11 +300,22 @@
             this.viewResolved.UseVisualStyleBackColor = true;
             this.viewResolved.Click += new System.EventHandler(this.viewResolved_Click);
             // 
+            // clearBtn
+            // 
+            this.clearBtn.Location = new System.Drawing.Point(633, 8);
+            this.clearBtn.Name = "clearBtn";
+            this.clearBtn.Size = new System.Drawing.Size(75, 23);
+            this.clearBtn.TabIndex = 21;
+            this.clearBtn.Text = "Clear";
+            this.clearBtn.UseVisualStyleBackColor = true;
+            this.clearBtn.Click += new System.EventHandler(this.clearBtn_Click);
+            // 
             // newIssueForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(720, 366);
+            this.Controls.Add(this.clearBtn);
             this.Controls.Add(this.viewResolved);
             this.Controls.Add(this.label9);
             this.Controls.Add(this.issueDate);
@@ -357,5 +372,6 @@
         private System.Windows.Forms.DateTimePicker issueDate;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Button viewResolved;
+        private System.Windows.Forms.Button clearBtn;
     }
 }

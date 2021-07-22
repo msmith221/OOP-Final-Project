@@ -39,4 +39,30 @@ namespace OOPIssueTracker
             return connection;
         }
     }
+
+    /*class ModNotes
+    {
+        private MySqlConnection update = new MySqlConnection("server=localhost;port=3306;username=id17203657_kirosactions;password=0CMrOTbJ8wS4|brF;database=id17203657_actionhistory");
+
+        public void establishConnection()
+        {
+            if(update.State == System.Data.ConnectionState.Open)
+            {
+                update.Open();
+            }
+        }
+
+        public void endConnection()
+        {
+            if(update.State == System.Data.ConnectionState.Closed)
+            {
+                update.Close();
+            }
+        }
+
+        public MySqlConnection findConnection()
+        {
+            return update;
+        }
+    }*/
 }

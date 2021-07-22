@@ -87,8 +87,21 @@ namespace OOPIssueTracker
             string resolvedDate = DateTime.Now.ToString();
             string resolvedVersion = "";
 
+            var chars = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
+            var stringChars = new char[8];
+            var random = new Random();
+
+            for (int i = 0; i < stringChars.Length; i++)
+            {
+                stringChars[i] = chars[random.Next(chars.Length)];
+            }
+
+            var finalString = new String(stringChars);
+
+            string issueIDNum = finalString;
+
             db.openConnection();
-            MySqlCommand resolve = new MySqlCommand("SELECT `name`, `reportURL`, `severity`, `type`, `date`, `details`, `version` FROM `resolvedissues` WHERE `name` = @name", db.getConnection());
+            MySqlCommand resolve = new MySqlCommand("SELECT `name`, `reportURL`, `severity`, `type`, `date`, `details`, `version`, `issueID` FROM `resolvedissues` WHERE `name` = @name", db.getConnection());
             resolve.Parameters.AddWithValue("@name", completedIssue.SelectedItem.ToString());
             MySqlDataReader reader = resolve.ExecuteReader();
             while (reader.Read())
@@ -100,10 +113,11 @@ namespace OOPIssueTracker
                 reportDate = reader.GetValue(4).ToString();
                 resolvedDetails = reader.GetValue(5).ToString();
                 resolvedVersion = reader.GetValue(6).ToString();
+                issueIDNum = reader.GetValue(7).ToString();
             }
             db.closeConnection();
 
-            MySqlCommand command = new MySqlCommand("INSERT INTO `issues`(`type`,`severity`,`name`,`date`,`version`,`reportURL`,`details`) VALUES (@type, @sev, @name, @date, @version, @report, @details)", db.getConnection());
+            MySqlCommand command = new MySqlCommand("INSERT INTO `issues`(`type`,`severity`,`name`,`date`,`version`,`reportURL`,`details`,`issueID`) VALUES (@type, @sev, @name, @date, @version, @report, @details, @ID)", db.getConnection());
             command.Parameters.Add("@type", MySqlDbType.VarChar).Value = resolvedType;
             command.Parameters.Add("@sev", MySqlDbType.VarChar).Value = resolvedSev;
             command.Parameters.Add("@name", MySqlDbType.VarChar).Value = resolvedName;
@@ -111,6 +125,7 @@ namespace OOPIssueTracker
             command.Parameters.Add("@version", MySqlDbType.VarChar).Value = resolvedVersion;
             command.Parameters.Add("@report", MySqlDbType.VarChar).Value = resolvedURL;
             command.Parameters.Add("@details", MySqlDbType.VarChar).Value = resolvedDetails;
+            command.Parameters.Add("@ID", MySqlDbType.VarChar).Value = issueIDNum;
 
 
             db.openConnection();

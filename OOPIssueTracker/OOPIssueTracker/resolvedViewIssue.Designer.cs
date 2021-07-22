@@ -81,6 +81,7 @@
             this.idnumber.ReadOnly = true;
             this.idnumber.Size = new System.Drawing.Size(146, 20);
             this.idnumber.TabIndex = 2;
+            this.idnumber.TextChanged += new System.EventHandler(this.idnumber_TextChanged);
             // 
             // loadButton
             // 

@@ -32,11 +32,12 @@
             this.logoutButton = new System.Windows.Forms.Button();
             this.openIssues = new System.Windows.Forms.Button();
             this.resolvedIssues = new System.Windows.Forms.Button();
+            this.submitModNote = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // newIssue
             // 
-            this.newIssue.Location = new System.Drawing.Point(38, 12);
+            this.newIssue.Location = new System.Drawing.Point(38, 72);
             this.newIssue.Name = "newIssue";
             this.newIssue.Size = new System.Drawing.Size(142, 42);
             this.newIssue.TabIndex = 0;
@@ -46,7 +47,7 @@
             // 
             // logoutButton
             // 
-            this.logoutButton.Location = new System.Drawing.Point(38, 156);
+            this.logoutButton.Location = new System.Drawing.Point(38, 216);
             this.logoutButton.Name = "logoutButton";
             this.logoutButton.Size = new System.Drawing.Size(142, 42);
             this.logoutButton.TabIndex = 1;
@@ -56,7 +57,7 @@
             // 
             // openIssues
             // 
-            this.openIssues.Location = new System.Drawing.Point(38, 60);
+            this.openIssues.Location = new System.Drawing.Point(38, 120);
             this.openIssues.Name = "openIssues";
             this.openIssues.Size = new System.Drawing.Size(142, 45);
             this.openIssues.TabIndex = 2;
@@ -66,7 +67,7 @@
             // 
             // resolvedIssues
             // 
-            this.resolvedIssues.Location = new System.Drawing.Point(38, 111);
+            this.resolvedIssues.Location = new System.Drawing.Point(38, 171);
             this.resolvedIssues.Name = "resolvedIssues";
             this.resolvedIssues.Size = new System.Drawing.Size(142, 39);
             this.resolvedIssues.TabIndex = 3;
@@ -74,11 +75,22 @@
             this.resolvedIssues.UseVisualStyleBackColor = true;
             this.resolvedIssues.Click += new System.EventHandler(this.resolvedIssues_Click);
             // 
+            // submitModNote
+            // 
+            this.submitModNote.Location = new System.Drawing.Point(38, 12);
+            this.submitModNote.Name = "submitModNote";
+            this.submitModNote.Size = new System.Drawing.Size(142, 54);
+            this.submitModNote.TabIndex = 4;
+            this.submitModNote.Text = "Submit New Mod Note";
+            this.submitModNote.UseVisualStyleBackColor = true;
+            this.submitModNote.Click += new System.EventHandler(this.submitModNote_Click);
+            // 
             // kirosTracker
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(225, 210);
+            this.ClientSize = new System.Drawing.Size(225, 270);
+            this.Controls.Add(this.submitModNote);
             this.Controls.Add(this.resolvedIssues);
             this.Controls.Add(this.openIssues);
             this.Controls.Add(this.logoutButton);
@@ -95,6 +107,7 @@
         private System.Windows.Forms.Button logoutButton;
         private System.Windows.Forms.Button openIssues;
         private System.Windows.Forms.Button resolvedIssues;
+        private System.Windows.Forms.Button submitModNote;
     }
 }
 

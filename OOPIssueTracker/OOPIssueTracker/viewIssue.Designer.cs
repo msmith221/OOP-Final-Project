@@ -46,11 +46,13 @@
             this.detailsBox = new System.Windows.Forms.TextBox();
             this.closeButton = new System.Windows.Forms.Button();
             this.loadButton = new System.Windows.Forms.Button();
+            this.label8 = new System.Windows.Forms.Label();
+            this.resolvedIDNumber = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
             // 
             // submissionDate
             // 
-            this.submissionDate.Location = new System.Drawing.Point(108, 86);
+            this.submissionDate.Location = new System.Drawing.Point(108, 109);
             this.submissionDate.Name = "submissionDate";
             this.submissionDate.ReadOnly = true;
             this.submissionDate.Size = new System.Drawing.Size(162, 20);
@@ -89,7 +91,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(9, 89);
+            this.label2.Location = new System.Drawing.Point(16, 112);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(86, 13);
             this.label2.TabIndex = 4;
@@ -97,7 +99,7 @@
             // 
             // issueSeverity
             // 
-            this.issueSeverity.Location = new System.Drawing.Point(108, 121);
+            this.issueSeverity.Location = new System.Drawing.Point(108, 146);
             this.issueSeverity.Name = "issueSeverity";
             this.issueSeverity.ReadOnly = true;
             this.issueSeverity.Size = new System.Drawing.Size(162, 20);
@@ -106,7 +108,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(13, 124);
+            this.label3.Location = new System.Drawing.Point(16, 153);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(79, 13);
             this.label3.TabIndex = 6;
@@ -115,7 +117,7 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(27, 53);
+            this.label4.Location = new System.Drawing.Point(30, 72);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(65, 13);
             this.label4.TabIndex = 7;
@@ -123,7 +125,7 @@
             // 
             // issueStatus
             // 
-            this.issueStatus.Location = new System.Drawing.Point(108, 50);
+            this.issueStatus.Location = new System.Drawing.Point(108, 72);
             this.issueStatus.Name = "issueStatus";
             this.issueStatus.ReadOnly = true;
             this.issueStatus.Size = new System.Drawing.Size(162, 20);
@@ -132,7 +134,7 @@
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(13, 165);
+            this.label5.Location = new System.Drawing.Point(16, 190);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(73, 13);
             this.label5.TabIndex = 9;
@@ -140,7 +142,7 @@
             // 
             // gameVersion
             // 
-            this.gameVersion.Location = new System.Drawing.Point(108, 162);
+            this.gameVersion.Location = new System.Drawing.Point(108, 183);
             this.gameVersion.Name = "gameVersion";
             this.gameVersion.ReadOnly = true;
             this.gameVersion.Size = new System.Drawing.Size(162, 20);
@@ -149,7 +151,7 @@
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(13, 211);
+            this.label6.Location = new System.Drawing.Point(14, 269);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(72, 13);
             this.label6.TabIndex = 11;
@@ -157,7 +159,7 @@
             // 
             // ticketURL
             // 
-            this.ticketURL.Location = new System.Drawing.Point(108, 208);
+            this.ticketURL.Location = new System.Drawing.Point(108, 266);
             this.ticketURL.Name = "ticketURL";
             this.ticketURL.ReadOnly = true;
             this.ticketURL.Size = new System.Drawing.Size(162, 20);
@@ -165,7 +167,7 @@
             // 
             // openURL
             // 
-            this.openURL.Location = new System.Drawing.Point(148, 235);
+            this.openURL.Location = new System.Drawing.Point(108, 292);
             this.openURL.Name = "openURL";
             this.openURL.Size = new System.Drawing.Size(75, 23);
             this.openURL.TabIndex = 13;
@@ -176,7 +178,7 @@
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(25, 277);
+            this.label7.Location = new System.Drawing.Point(19, 330);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(67, 13);
             this.label7.TabIndex = 14;
@@ -184,7 +186,7 @@
             // 
             // detailsBox
             // 
-            this.detailsBox.Location = new System.Drawing.Point(104, 277);
+            this.detailsBox.Location = new System.Drawing.Point(90, 343);
             this.detailsBox.Multiline = true;
             this.detailsBox.Name = "detailsBox";
             this.detailsBox.ReadOnly = true;
@@ -193,7 +195,7 @@
             // 
             // closeButton
             // 
-            this.closeButton.Location = new System.Drawing.Point(196, 522);
+            this.closeButton.Location = new System.Drawing.Point(187, 578);
             this.closeButton.Name = "closeButton";
             this.closeButton.Size = new System.Drawing.Size(96, 23);
             this.closeButton.TabIndex = 17;
@@ -203,7 +205,7 @@
             // 
             // loadButton
             // 
-            this.loadButton.Location = new System.Drawing.Point(55, 522);
+            this.loadButton.Location = new System.Drawing.Point(58, 578);
             this.loadButton.Name = "loadButton";
             this.loadButton.Size = new System.Drawing.Size(89, 23);
             this.loadButton.TabIndex = 19;
@@ -211,11 +213,32 @@
             this.loadButton.UseVisualStyleBackColor = true;
             this.loadButton.Click += new System.EventHandler(this.loadButton_Click);
             // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Location = new System.Drawing.Point(49, 229);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(46, 13);
+            this.label8.TabIndex = 20;
+            this.label8.Text = "Issue ID";
+            this.label8.Click += new System.EventHandler(this.label8_Click);
+            // 
+            // resolvedIDNumber
+            // 
+            this.resolvedIDNumber.Location = new System.Drawing.Point(108, 222);
+            this.resolvedIDNumber.Name = "resolvedIDNumber";
+            this.resolvedIDNumber.ReadOnly = true;
+            this.resolvedIDNumber.Size = new System.Drawing.Size(162, 20);
+            this.resolvedIDNumber.TabIndex = 21;
+            this.resolvedIDNumber.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
+            // 
             // viewIssue
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(325, 557);
+            this.ClientSize = new System.Drawing.Size(353, 626);
+            this.Controls.Add(this.resolvedIDNumber);
+            this.Controls.Add(this.label8);
             this.Controls.Add(this.loadButton);
             this.Controls.Add(this.closeButton);
             this.Controls.Add(this.detailsBox);
@@ -262,5 +285,7 @@
         private System.Windows.Forms.TextBox detailsBox;
         private System.Windows.Forms.Button closeButton;
         private System.Windows.Forms.Button loadButton;
+        private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.TextBox resolvedIDNumber;
     }
 }

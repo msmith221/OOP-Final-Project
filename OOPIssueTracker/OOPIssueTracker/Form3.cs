@@ -192,10 +192,10 @@ namespace OOPIssueTracker
             string reportDate = "";
             string resolvedDate = DateTime.Now.ToString();
             string resolvedVersion = "";
-            string resolvedIDNumber = finalString;
+            string resolvedIDNumber = "";
 
             db.openConnection();
-            MySqlCommand resolve = new MySqlCommand("SELECT `name`, `reportURL`, `severity`, `type`, `date`, `details`, `version` FROM `issues` WHERE `name` = @name", db.getConnection());
+            MySqlCommand resolve = new MySqlCommand("SELECT `name`, `reportURL`, `severity`, `type`, `date`, `details`, `version`, `issueID` FROM `issues` WHERE `name` = @name", db.getConnection());
             resolve.Parameters.AddWithValue("@name", openIssuesBox.SelectedItem.ToString());
             MySqlDataReader reader = resolve.ExecuteReader();
             while (reader.Read())
@@ -207,6 +207,7 @@ namespace OOPIssueTracker
                 reportDate = reader.GetValue(4).ToString();
                 resolvedDetails = reader.GetValue(5).ToString();
                 resolvedVersion = reader.GetValue(6).ToString();
+                resolvedIDNumber = reader.GetValue(7).ToString();
             }
             db.closeConnection();
 
